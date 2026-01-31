@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories - MVCTasks</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <h1 class="display-4">Categories</h1>
+                    <hr />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <a href="/Category/Create" class="btn btn-success">
+                        <i class="bi bi-plus-circle"></i> Create New Category
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a1b2c3d4-e5f6-7890-abcd-ef1234567890</td>
+                                    <td>Electronics</td>
+                                    <td>Electronic devices and accessories</td>
+                                    <td>
+                                        <a href="/Category/Edit" class="btn btn-warning btn-sm me-1">
+                                            Edit
+                                        </a>
+                                        <a href="/Category/Delete" class="btn btn-danger btn-sm">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>b2c3d4e5-f6a7-8901-bcde-f12345678901</td>
+                                    <td>Books</td>
+                                    <td>Physical and digital books</td>
+                                    <td>
+                                        <a href="/Category/Edit" class="btn btn-warning btn-sm me-1">
+                                            Edit
+                                        </a>
+                                        <a href="/Category/Delete" class="btn btn-danger btn-sm">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>c3d4e5f6-a7b8-9012-cdef-123456789012</td>
+                                    <td>Clothing</td>
+                                    <td>Apparel and fashion items</td>
+                                    <td>
+                                        <a href="/Category/Edit" class="btn btn-warning btn-sm me-1">
+                                            Edit
+                                        </a>
+                                        <a href="/Category/Delete" class="btn btn-danger btn-sm">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>d4e5f6a7-b8c9-0123-def1-234567890123</td>
+                                    <td>Home & Garden</td>
+                                    <td>Furniture and gardening supplies</td>
+                                    <td>
+                                        <a href="/Category/Edit" class="btn btn-warning btn-sm me-1">
+                                            Edit
+                                        </a>
+                                        <a href="/Category/Delete" class="btn btn-danger btn-sm">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>e5f6a7b8-c9d0-1234-ef12-345678901234</td>
+                                    <td>Sports</td>
+                                    <td>Sports equipment and fitness gear</td>
+                                    <td>
+                                        <a href="/Category/Edit" class="btn btn-warning btn-sm me-1">
+                                            Edit
+                                        </a>
+                                        <a href="/Category/Delete" class="btn btn-danger btn-sm">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

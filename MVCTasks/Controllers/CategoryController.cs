@@ -1,10 +1,10 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MVCTasks.Models;
+using System.Diagnostics;
 
 namespace MVCTasks.Controllers
 {
-    public class HomeController : Controller
+    public class CategoryController : Controller
     {
         public IActionResult Index()
         {
