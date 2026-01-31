@@ -1,3 +1,4 @@
+@model MVCTasks.Models.Category
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,31 +9,6 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">MVCTasks</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/Category/Index">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/Home/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <div class="container">
         <main role="main" class="pb-3">
             <div class="row mb-4">
@@ -42,50 +18,39 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card shadow">
-                        <div class="card-header bg-warning text-dark">
-                            <h4 class="mb-0">Update Category Information</h4>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="categoryId" class="form-label">Category ID</label>
-                                    <input type="text" class="form-control" id="categoryId" value="a1b2c3d4-e5f6-7890-abcd-ef1234567890" readonly>
-                                </div>
+<div class="card-body">
+    <form method="post" asp-action="Edit" asp-controller="Category">
 
-                                <div class="mb-3">
-                                    <label for="categoryName" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="categoryName" value="Electronics" required>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="categoryDescription" class="form-label">Description</label>
-                                    <textarea class="form-control" id="categoryDescription" rows="4" required>Electronic devices and accessories</textarea>
-                                </div>
+        <input type="hidden" asp-for="Id" />
 
-                                <div class="d-flex justify-content-between">
-                                    <button type="submit" class="btn btn-primary">
-                                        Save Changes
-                                    </button>
-                                    <a href="/Category/Index" class="btn btn-secondary">
-                                        Back to List
-                                    </a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="mb-3">
+            <label asp-for="Id" class="form-label">Category ID</label>
+
+            <input type="text" class="form-control" asp-for="Id" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+
+            <input type="text" class="form-control" asp-for="Name" placeholder="Enter category name" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+
+            <textarea class="form-control" asp-for="Description" rows="4" required></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </form>
+</div>
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - MVCTasks - <a href="/Home/Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
