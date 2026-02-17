@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace PipelineGuardian.Areas.Admin.Controllers
+namespace PipelineGuardian.Controllers
 {
     public class BankController : Controller
     {
@@ -14,6 +14,10 @@ namespace PipelineGuardian.Areas.Admin.Controllers
         public IActionResult GetUserProfile(string username)
         {
             return Content($"Hello: {username}");
+        }
+        public IActionResult Index()
+        {
+            return View();
         }
     }
 }
