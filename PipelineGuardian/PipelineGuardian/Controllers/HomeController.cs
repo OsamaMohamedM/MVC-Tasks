@@ -13,5 +13,10 @@ namespace PipelineGuardian.Controllers
         {
             return Ok($"done {accountId}");
         }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
