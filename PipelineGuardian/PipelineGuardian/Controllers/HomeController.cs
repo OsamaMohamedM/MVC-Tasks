@@ -1,25 +1,17 @@
+using BL.Filtters;
 using Microsoft.AspNetCore.Mvc;
-using PipelineGuardian.Models;
-using System.Diagnostics;
 
 namespace PipelineGuardian.Controllers
 {
+    [Route("bank")]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [FreezeCheck]
+        [TransactionLog]
+        [HttpGet("withdraw/{accountId:int}")]
+        public IActionResult Withdraw(int accountId)
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return Ok($"done {accountId}");
         }
     }
 }

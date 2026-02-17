@@ -1,10 +1,15 @@
+using BL.Filtters;
+using BL.Repos;
 using PipelineGuardian.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>();
+});
+builder.Services.AddSingleton<BankRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,7 +28,10 @@ app.UseMiddleware<MaintenanceMiddleware>();
 app.UseAuthorization();
 
 app.MapStaticAssets();
-
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+);
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

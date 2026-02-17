@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="BL/BL.csproj" Id="1a147e79-143d-4261-b85c-3885c4380563" />
+  <Project Path="Data/Data.csproj" Id="cb6d6bc6-4a75-4527-b166-303ca96181ed" />
   <Project Path="PipelineGuardian/PipelineGuardian.csproj" />
 </Solution>
