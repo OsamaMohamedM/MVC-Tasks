@@ -7,9 +7,4 @@
     <RootNamespace>MVC_Model_Binding___Validation_Lab</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
